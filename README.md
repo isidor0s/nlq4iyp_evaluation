@@ -1,8 +1,25 @@
-# IYP Text-to-Cypher Evaluation
+# NLQ4IYP: Evaluation & CLI Agent
 
-This project and Natural Language Querying agent for the Internet Yellow Pages (IYP) and provides tools to evaluate its performance.
+
+This repository offers a CLI agent and evaluation tools for the [NLQ4IYP project](https://github.com/isidor0s/NLQ_4_IYP), complementing the [web app](https://nlq4iyp.streamlit.app/):
+
+**CypherEval datasets** ([codeberg.org/dimitrios/CypherEval](https://codeberg.org/dimitrios/CypherEval)) are used for benchmarking Cypher query generation. This benchmark currently evaluates only the Gemini agent version.
+
+- CLI gemini agent version.
+- Evaluate Cypher query generation automatically.
+- Assess free-text answers with an LLM-based judge.
+
 
 ## Project Structure
+
+
+## CypherEval Dataset
+
+This repository uses the CypherEval datasets for benchmarking NL-to-Cypher models. See the [CypherEval project](https://codeberg.org/dimitrios/CypherEval) for more details about the dataset.
+
+**Note:** This benchmark currently only evaluates the Gemini agent.
+
+---
 
 This repository is organized into three main components:
 

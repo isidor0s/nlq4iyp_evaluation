@@ -1,6 +1,6 @@
 # Main Scripts
 
-This directory contains the Natural Language Querying (NlQ4IYP) for IYP agent (cli version) and the CypherEval evaluation pipeline.
+This directory contains the Natural Language Querying for IYP agent (NlQ4IYP) (cli version) and the CypherEval evaluation pipeline.
 
 ## Structure
 
