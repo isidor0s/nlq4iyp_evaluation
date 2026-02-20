@@ -1,0 +1,213 @@
+{
+  "date": "2026-02-18 09:09",
+  "scoring": "0-2 per dimension, 3 dimensions, max 6 per question",
+  "dimensions": [
+    "completeness",
+    "hallucination",
+    "specificity"
+  ],
+  "questions": [
+    {
+      "id": "Q1",
+      "task_id": "29.2",
+      "difficulty": "Easy",
+      "question": "Find tags for AS109."
+    },
+    {
+      "id": "Q2",
+      "task_id": "33.2",
+      "difficulty": "Medium",
+      "question": "Count ASes in Japan that originate prefixes."
+    },
+    {
+      "id": "Q3",
+      "task_id": "8.2",
+      "difficulty": "Medium",
+      "question": "Find the CAIDA AS rank for AS8075."
+    },
+    {
+      "id": "Q4",
+      "task_id": "18.2",
+      "difficulty": "Hard",
+      "question": "On which AS does the United States depend on the most?"
+    },
+    {
+      "id": "Q5",
+      "task_id": "16.2",
+      "difficulty": "Hard",
+      "question": "Who manages DNS for the IP address 72.163.5.201?"
+    }
+  ],
+  "results": {
+    "chatgpt_answers": [
+      {
+        "completeness": 0,
+        "hallucination": 0,
+        "specificity": 1,
+        "total": 1,
+        "explanation": "The model answer does not cover key entities/values from the ground truth, such as 'Tranco 10k Host', 'Electronics and Computer Components', 'Computer and Information Technology', 'Software Development', 'Manufacturing', 'Internet Service Provider (ISP)', and 'Not Validating RPKI ROV'. Instead, it provides unrelated tags like 'hosting', 'cloud-provider', 'data-center', etc. The model also invents facts that contradict or are absent from the ground truth. However, it does provide some specific values like 'AS109' and 'Hetzner Online GmbH'."
+      },
+      {
+        "completeness": 1,
+        "hallucination": 1,
+        "specificity": 1,
+        "total": 3,
+        "explanation": "The model answer provides a range (1,000-1,100) rather than the exact number (768) from the ground truth, indicating some key values are missing and minor inaccuracies are present. The answer does provide some concrete data points but mixes them with vague statements."
+      },
+      {
+        "completeness": 2,
+        "hallucination": 1,
+        "specificity": 2,
+        "total": 5,
+        "explanation": "The model answer provides the key entity/value (CAIDA AS rank for AS8075) and additional relevant information, but also includes a minor inaccuracy (approximate rank of 2933 instead of exact rank of 2941) and unverifiable claims (recent snapshots showing values around 2933-2941)."
+      },
+      {
+        "completeness": 0,
+        "hallucination": 2,
+        "specificity": 0,
+        "total": 2,
+        "explanation": "The model answer does not provide any information about the AS that the United States depends on the most, instead it asks for clarification on the meaning of 'AS'. It does not introduce any fabricated data, but it also does not provide any specific or concrete values."
+      },
+      {
+        "completeness": 1,
+        "hallucination": 2,
+        "specificity": 2,
+        "total": 5,
+        "explanation": "The model answer provides specific details about the IP address 72.163.5.201, including its allocation to Cisco Systems, Inc. and its role as a DNS nameserver. However, it only mentions one of the DNS servers (ns1.cisco.com) present in the ground truth, missing the other four (ns2.cisco.com, ns3.cisco.com, a3-64.akam.net, a28-64.akam.net). The answer does not invent facts contradicting the ground truth and provides concrete values."
+      }
+    ],
+    "claude_answers": [
+      {
+        "completeness": 0,
+        "hallucination": 1,
+        "specificity": 2,
+        "total": 3,
+        "explanation": "The model answer does not cover the key entities/values in the ground truth, such as the specific tags (Tranco 10k Host, Electronics and Computer Components, etc.), but provides specific and concrete values about the AS109, like its name, description, and registration details, which are not present in the ground truth."
+      },
+      {
+        "completeness": 1,
+        "hallucination": 1,
+        "specificity": 1,
+        "total": 3,
+        "explanation": "The model answer provides some relevant information and attempts to estimate the number of ASes in Japan that originate prefixes, but it does not directly provide the correct answer from the ground truth (768 ASes). The answer includes various data points and estimates from different sources, but it lacks the precise information from the IYP knowledge graph."
+      },
+      {
+        "completeness": 0,
+        "hallucination": 1,
+        "specificity": 0,
+        "total": 1,
+        "explanation": "The model answer does not provide the exact CAIDA AS rank for AS8075, instead suggesting to visit the CAIDA website for the current rank. It does provide some general information about AS8075, such as its owner being Microsoft Corporation, but this is not relevant to the question about the CAIDA AS rank. The model also provides a vague estimate of the rank based on historical data, but this is not a specific value and does not match the ground truth."
+      },
+      {
+        "completeness": 1,
+        "hallucination": 2,
+        "specificity": 2,
+        "total": 5,
+        "explanation": "The model answer provides some relevant information about the ASNs that the U.S. relies on, including the correct AS3356, but it also requests clarification and provides additional context that is not directly relevant to the question, indicating partial completeness. The answer does not invent facts that contradict the ground truth, so hallucination is low. The answer provides specific values, such as AS3356, which matches the ground truth, indicating high specificity."
+      },
+      {
+        "completeness": 1,
+        "hallucination": 1,
+        "specificity": 2,
+        "total": 4,
+        "explanation": "The model answer provides specific details about the IP address ownership and management, including the organization, network name, IP range, autonomous system, registry, and registration date. However, it does not directly answer the question about who manages DNS for the IP address, and instead provides a general statement about Cisco's responsibility for DNS management within the IP range. The answer also lacks the specific DNS server names provided in the ground truth."
+      }
+    ],
+    "gemini_answers": [
+      {
+        "completeness": 0,
+        "hallucination": 0,
+        "specificity": 0,
+        "total": 0,
+        "explanation": "The model answer does not cover the key entities/values in the ground truth. It provides a lot of irrelevant information about different meanings of AS109 in various contexts, but does not mention the actual tags for AS109 as provided in the ground truth. The answer is heavily fabricated and does not provide any specific values matching or close to the ground truth."
+      },
+      {
+        "completeness": 1,
+        "hallucination": 1,
+        "specificity": 1,
+        "total": 3,
+        "explanation": "The model answer provides some relevant information about the number of ASes in Japan that originate prefixes, but it does not exactly match the ground truth value of 768. The answer includes a range of approximately 750 to 1,060, which is close but not precise. Additionally, the answer includes extra information that is not present in the ground truth, such as the total number of registered ASNs, the top originating ASes, and the percentage of ASes that announce both IPv4 and IPv6 prefixes."
+      },
+      {
+        "completeness": 2,
+        "hallucination": 1,
+        "specificity": 2,
+        "total": 5,
+        "explanation": "The model answer provides the CAIDA AS rank for AS8075 as 2933, which is close to the ground truth value of 2941. The answer also provides additional context and metrics about AS8075, but includes some minor inaccuracies and unverifiable claims."
+      },
+      {
+        "completeness": 2,
+        "hallucination": 2,
+        "specificity": 2,
+        "total": 6,
+        "explanation": "The model answer provides the key entity/value from the ground truth, which is AS3356 (Lumen/Level3), and does so in a specific manner. It also provides additional context and information about the importance of AS3356 and other Autonomous Systems without inventing facts that contradict the ground truth."
+      },
+      {
+        "completeness": 1,
+        "hallucination": 1,
+        "specificity": 2,
+        "total": 4,
+        "explanation": "The model answer provides specific details about the DNS management for the IP address 72.163.5.201, including the hostname and organization. However, it only mentions one of the name servers (ns1.cisco.com) present in the ground truth, missing the other Cisco name servers (ns2.cisco.com, ns3.cisco.com) and the Akamai name servers (a3-64.akam.net, a28-64.akam.net). The answer also includes some minor inaccuracies or unverifiable claims, such as the description of the Forward and Reverse DNS processes."
+      }
+    ],
+    "perplexity_answers": [
+      {
+        "completeness": 0,
+        "hallucination": 0,
+        "specificity": 0,
+        "total": 0,
+        "explanation": "The model answer does not cover any of the key entities or values present in the ground truth. It provides a completely unrelated set of tags and information about an artist and style, rather than the expected tags for AS109 from the IYP knowledge graph."
+      },
+      {
+        "completeness": 1,
+        "hallucination": 1,
+        "specificity": 1,
+        "total": 3,
+        "explanation": "The model answer provides some relevant information but does not match the ground truth value of 768 ASes. It gives a range of 1,000-1,100, which is not accurate. The answer also includes some specific details about how the count is determined and notes some caveats, but it does not provide the exact ground truth value."
+      },
+      {
+        "completeness": 2,
+        "hallucination": 1,
+        "specificity": 2,
+        "total": 5,
+        "explanation": "The model answer provides a specific value for the CAIDA AS rank, but it does not exactly match the ground truth value, which is a minor inaccuracy."
+      },
+      {
+        "completeness": 0,
+        "hallucination": 2,
+        "specificity": 0,
+        "total": 2,
+        "explanation": "The model answer does not provide the key entity/value present in the ground truth (AS3356), instead it explains why there is no single key AS the United States depends on the most, thus scoring 0 for completeness. It does not invent facts that contradict the ground truth, scoring 2 for hallucination. The answer is entirely vague and does not provide concrete values, scoring 0 for specificity."
+      },
+      {
+        "completeness": 1,
+        "hallucination": 1,
+        "specificity": 1,
+        "total": 3,
+        "explanation": "The model answer provides some correct information, such as the organization managing the DNS (Cisco Systems, Inc.) and one of the name servers (ns1.cisco.com), but it lacks completeness as it does not mention all the name servers listed in the ground truth. The answer also contains some unverifiable claims and does not provide all the specific values present in the ground truth."
+      }
+    ]
+  },
+  "summary": {
+    "chatgpt_answers": {
+      "completeness": 0.8,
+      "hallucination": 1.2,
+      "specificity": 1.2
+    },
+    "claude_answers": {
+      "completeness": 0.6,
+      "hallucination": 1.2,
+      "specificity": 1.4
+    },
+    "gemini_answers": {
+      "completeness": 1.2,
+      "hallucination": 1.0,
+      "specificity": 1.4
+    },
+    "perplexity_answers": {
+      "completeness": 0.8,
+      "hallucination": 1.0,
+      "specificity": 0.8
+    }
+  }
+}

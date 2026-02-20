@@ -1,0 +1,19 @@
+Instructions:
+  Copy-paste each model's answer below the corresponding question.
+  Separate answers with "---" on its own line.
+  Save as <model_name>.txt (e.g., gemini.txt, chatgpt.txt, perplexity.txt, copilot.txt)
+
+Q1: Find tags for AS109.
+<paste answer here>
+---
+Q2: Count ASes in Japan that originate prefixes.
+<paste answer here>
+---
+Q3: Find the CAIDA AS rank for AS8075.
+<paste answer here>
+---
+Q4: On which AS does the United States depend on the most?
+<paste answer here>
+---
+Q5: Who manages DNS for the IP address 72.163.5.201?
+<paste answer here>

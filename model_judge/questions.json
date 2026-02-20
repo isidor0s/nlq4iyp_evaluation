@@ -1,0 +1,101 @@
+{
+    "description": "Selected CypherEval questions for cross-model comparison against IYP ground truth",
+    "source": "CypherEval variation-B-filtered.csv (general prompts)",
+    "questions": [
+        {
+            "id": "Q1",
+            "task_id": "29.2",
+            "difficulty": "Easy",
+            "question": "Find tags for AS109.",
+            "cypher_query": "MATCH (:AS {asn:109})-[:CATEGORIZED]-(t:Tag) RETURN DISTINCT t.label",
+            "ground_truth": [
+                {
+                    "t.label": "Tranco 10k Host"
+                },
+                {
+                    "t.label": "Electronics and Computer Components"
+                },
+                {
+                    "t.label": "Computer and Information Technology"
+                },
+                {
+                    "t.label": "Software Development"
+                },
+                {
+                    "t.label": "Manufacturing"
+                },
+                {
+                    "t.label": "Internet Service Provider (ISP)"
+                },
+                {
+                    "t.label": "Not Validating RPKI ROV"
+                }
+            ],
+            "ground_truth_summary": "Tranco 10k Host, Electronics and Computer Components, Computer and Information Technology, Software Development, Manufacturing, Internet Service Provider (ISP), Not Validating RPKI ROV"
+        },
+        {
+            "id": "Q2",
+            "task_id": "33.2",
+            "difficulty": "Medium",
+            "question": "Count ASes in Japan that originate prefixes.",
+            "cypher_query": "MATCH (:Country {country_code: 'JP'})-[:COUNTRY]-(as:AS)-[:ORIGINATE]-(:Prefix) RETURN count(DISTINCT as) AS totalASWithPrefix",
+            "ground_truth": [
+                {
+                    "totalASWithPrefix": 768
+                }
+            ],
+            "ground_truth_summary": "768 ASes"
+        },
+        {
+            "id": "Q3",
+            "task_id": "8.2",
+            "difficulty": "Medium",
+            "question": "Find the CAIDA AS rank for AS8075.",
+            "cypher_query": "MATCH (:AS {asn:8075})-[r:RANK]-(:Ranking {name:'CAIDA ASRank'}) RETURN r.rank",
+            "ground_truth": [
+                {
+                    "r.rank": 2941
+                }
+            ],
+            "ground_truth_summary": "Rank 2941 in CAIDA ASRank"
+        },
+        {
+            "id": "Q4",
+            "task_id": "18.2",
+            "difficulty": "Hard",
+            "question": "On which AS does the United States depend on the most?",
+            "cypher_query": "MATCH (a:AS)-[r:RANK]->(:Ranking {name: 'IHR country ranking: Total AS (US)'})-[:COUNTRY]->(:Country {country_code: 'US'}) RETURN a.asn ORDER BY r.hege DESC LIMIT 1",
+            "ground_truth": [
+                {
+                    "a.asn": 3356
+                }
+            ],
+            "ground_truth_summary": "AS3356 (Lumen/Level3)"
+        },
+        {
+            "id": "Q5",
+            "task_id": "16.2",
+            "difficulty": "Hard",
+            "question": "Who manages DNS for the IP address 72.163.5.201?",
+            "cypher_query": "MATCH (a:AuthoritativeNameServer)<-[:MANAGED_BY]-(:DomainName)<-[:PART_OF]-(:HostName)-[:RESOLVES_TO]->(:IP {ip: '72.163.5.201'}) RETURN DISTINCT a.name",
+            "ground_truth": [
+                {
+                    "a.name": "ns3.cisco.com"
+                },
+                {
+                    "a.name": "a3-64.akam.net"
+                },
+                {
+                    "a.name": "ns2.cisco.com"
+                },
+                {
+                    "a.name": "a28-64.akam.net"
+                },
+                {
+                    "a.name": "ns1.cisco.com"
+                }
+            ],
+            "ground_truth_summary": "ns1.cisco.com, ns2.cisco.com, ns3.cisco.com, a3-64.akam.net, a28-64.akam.net"
+        }
+    ]
+}
