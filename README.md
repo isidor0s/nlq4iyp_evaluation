@@ -3,23 +3,21 @@
 
 This repository offers a CLI agent and evaluation tools for the [NLQ4IYP project](https://github.com/isidor0s/NLQ_4_IYP), complementing the [web app](https://nlq4iyp.streamlit.app/):
 
-**CypherEval datasets** ([codeberg.org/dimitrios/CypherEval](https://codeberg.org/dimitrios/CypherEval)) are used for benchmarking Cypher query generation. This benchmark currently evaluates only the Gemini agent version.
 
 - CLI gemini agent version.
 - Evaluate Cypher query generation automatically.
 - Assess free-text answers with an LLM-based judge.
 
 
-## Project Structure
-
-
 ## CypherEval Dataset
 
-This repository uses the CypherEval datasets for benchmarking NL-to-Cypher models. See the [CypherEval project](https://codeberg.org/dimitrios/CypherEval) for more details about the dataset.
+This repository uses the CypherEval datasets for benchmarking NL-to-Cypher models. See the [CypherEval](https://codeberg.org/dimitrios/CypherEval) for more details about the dataset.
 
 **Note:** This benchmark currently only evaluates the Gemini agent.
 
 ---
+
+## Project Structure
 
 This repository is organized into three main components:
 
@@ -28,12 +26,35 @@ This repository is organized into three main components:
 -   **`data/`**: Shared data, including the CypherEval dataset and evaluation results.
 
 ## Quick Start
+
+
+### Prerequisites
+
+- **Python version:** Python 3.8 or higher
+- **Google Gemini API key:** Get from [Google AI Studio](https://aistudio.google.com/api-keys)
+- **Groq API key (for Model Judge):** Get from [Groq Console](https://console.groq.com/keys)
+
+---
+
 1.  **Install dependencies**:
     ```bash
     pip install -r requirements.txt
     ```
 2.  **Configure environment**:
-    Copy `.env.example` to `.env` and add your API keys (Google GenAI, Neo4j, Groq).
+    Copy `.env.example` to `.env` and add your API keys (Google Ai, Neo4j Server, Groq).
+    ```
+    # Google Gemini API
+    #GOOGLE_GENAI_API_KEY=your_google_api_key_here
+
+    # Neo4j Database Connection
+    # Default Live server/ Change for local IYP DB
+    NEO4J_URI=bolt://iyp-bolt.ihr.live:7687
+    NEO4J_USERNAME=neo4j
+    NEO4J_PASSWORD=
+    NEO4J_DATABASE=neo4j
+
+    # For Model Judge
+    GROQ_API_KEY=YOUR_GROQ_API_KEY_HERE
 
 3.  **Run the Agent** (Text-to-Cypher):
     ```bash
